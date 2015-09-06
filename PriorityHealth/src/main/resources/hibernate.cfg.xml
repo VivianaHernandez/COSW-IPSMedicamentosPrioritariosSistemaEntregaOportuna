@@ -7,20 +7,19 @@
     <property name="hibernate.connection.url">jdbc:mysql://desarrollo.is.escuelaing.edu.co:3306/cosw2?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">cosw2</property>
     <property name="hibernate.connection.password">cosw2gr22</property>
-    <mapping class="com.mycompany.priorityhealth.Contratos"/>
-    <mapping class="com.mycompany.priorityhealth.Autorizaciones"/>
-    <mapping class="com.mycompany.priorityhealth.DetallesPedidoId"/>
     <mapping class="com.mycompany.priorityhealth.MedicamentosPorProveedor"/>
-    <mapping class="com.mycompany.priorityhealth.ContratosId"/>
-    <mapping class="com.mycompany.priorityhealth.Pacientes"/>
-    <mapping class="com.mycompany.priorityhealth.Despachos"/>
     <mapping class="com.mycompany.priorityhealth.Pedidos"/>
     <mapping class="com.mycompany.priorityhealth.Mensajeros"/>
-    <mapping class="com.mycompany.priorityhealth.Epsafilidas"/>
-    <mapping class="com.mycompany.priorityhealth.Proveedores"/>
     <mapping class="com.mycompany.priorityhealth.DetallesPedido"/>
+    <mapping class="com.mycompany.priorityhealth.Epsafilidas"/>
+    <mapping class="com.mycompany.priorityhealth.Contratos"/>
     <mapping class="com.mycompany.priorityhealth.Medicamentos"/>
+    <mapping class="com.mycompany.priorityhealth.Autorizaciones"/>
+    <mapping class="com.mycompany.priorityhealth.Pacientes"/>
     <mapping class="com.mycompany.priorityhealth.Inventario"/>
+    <mapping class="com.mycompany.priorityhealth.Proveedores"/>
     <mapping class="com.mycompany.priorityhealth.OrdenesCompra"/>
+    <mapping class="com.mycompany.priorityhealth.ContratosId"/>
+    <mapping class="com.mycompany.priorityhealth.Despachos"/>
   </session-factory>
 </hibernate-configuration>

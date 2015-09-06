@@ -1,13 +1,11 @@
 package com.mycompany.priorityhealth;
-// Generated Sep 4, 2015 12:17:33 PM by Hibernate Tools 4.3.1
+// Generated 6/09/2015 05:42:28 PM by Hibernate Tools 4.3.1
 
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -22,7 +20,7 @@ import javax.persistence.Table;
 public class DetallesPedido  implements java.io.Serializable {
 
 
-     private DetallesPedidoId id;
+     private int idMedicamentos;
      private MedicamentosPorProveedor medicamentosPorProveedor;
      private Pedidos pedidos;
      private String cantidad;
@@ -31,30 +29,28 @@ public class DetallesPedido  implements java.io.Serializable {
     }
 
 	
-    public DetallesPedido(DetallesPedidoId id, MedicamentosPorProveedor medicamentosPorProveedor, Pedidos pedidos) {
-        this.id = id;
+    public DetallesPedido(int idMedicamentos, MedicamentosPorProveedor medicamentosPorProveedor, Pedidos pedidos) {
+        this.idMedicamentos = idMedicamentos;
         this.medicamentosPorProveedor = medicamentosPorProveedor;
         this.pedidos = pedidos;
     }
-    public DetallesPedido(DetallesPedidoId id, MedicamentosPorProveedor medicamentosPorProveedor, Pedidos pedidos, String cantidad) {
-       this.id = id;
+    public DetallesPedido(int idMedicamentos, MedicamentosPorProveedor medicamentosPorProveedor, Pedidos pedidos, String cantidad) {
+       this.idMedicamentos = idMedicamentos;
        this.medicamentosPorProveedor = medicamentosPorProveedor;
        this.pedidos = pedidos;
        this.cantidad = cantidad;
     }
    
-     @EmbeddedId
+     @Id 
 
     
-    @AttributeOverrides( {
-        @AttributeOverride(name="idMedicamentos", column=@Column(name="idMedicamentos", nullable=false) ), 
-        @AttributeOverride(name="idPedidos", column=@Column(name="idPedidos", nullable=false, length=45) ) } )
-    public DetallesPedidoId getId() {
-        return this.id;
+    @Column(name="idMedicamentos", unique=true, nullable=false)
+    public int getIdMedicamentos() {
+        return this.idMedicamentos;
     }
     
-    public void setId(DetallesPedidoId id) {
-        this.id = id;
+    public void setIdMedicamentos(int idMedicamentos) {
+        this.idMedicamentos = idMedicamentos;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)

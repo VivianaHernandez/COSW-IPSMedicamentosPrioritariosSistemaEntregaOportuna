@@ -1,5 +1,5 @@
 package com.mycompany.priorityhealth;
-// Generated Sep 4, 2015 12:17:33 PM by Hibernate Tools 4.3.1
+// Generated 6/09/2015 05:42:28 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -23,7 +23,6 @@ public class Inventario  implements java.io.Serializable {
      private int idInventario;
      private MedicamentosPorProveedor medicamentosPorProveedor;
      private String cantidad;
-     private String inventariocol;
 
     public Inventario() {
     }
@@ -33,11 +32,10 @@ public class Inventario  implements java.io.Serializable {
         this.idInventario = idInventario;
         this.medicamentosPorProveedor = medicamentosPorProveedor;
     }
-    public Inventario(int idInventario, MedicamentosPorProveedor medicamentosPorProveedor, String cantidad, String inventariocol) {
+    public Inventario(int idInventario, MedicamentosPorProveedor medicamentosPorProveedor, String cantidad) {
        this.idInventario = idInventario;
        this.medicamentosPorProveedor = medicamentosPorProveedor;
        this.cantidad = cantidad;
-       this.inventariocol = inventariocol;
     }
    
      @Id 
@@ -70,16 +68,6 @@ public class Inventario  implements java.io.Serializable {
     
     public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
-    }
-
-    
-    @Column(name="Inventariocol", length=45)
-    public String getInventariocol() {
-        return this.inventariocol;
-    }
-    
-    public void setInventariocol(String inventariocol) {
-        this.inventariocol = inventariocol;
     }
 
 

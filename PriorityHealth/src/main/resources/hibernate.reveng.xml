@@ -2,17 +2,17 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="cosw2"/>
+  <table-filter match-name="OrdenesCompra"/>
   <table-filter match-name="DetallesPedido"/>
-  <table-filter match-name="MedicamentosPorProveedor"/>
+  <table-filter match-name="Despachos"/>
+  <table-filter match-name="Pacientes"/>
+  <table-filter match-name="Mensajeros"/>
+  <table-filter match-name="Autorizaciones"/>
+  <table-filter match-name="Pedidos"/>
+  <table-filter match-name="Proveedores"/>
   <table-filter match-name="Inventario"/>
   <table-filter match-name="EPSAfilidas"/>
-  <table-filter match-name="OrdenesCompra"/>
-  <table-filter match-name="Proveedores"/>
-  <table-filter match-name="Despachos"/>
-  <table-filter match-name="Mensajeros"/>
   <table-filter match-name="Medicamentos"/>
   <table-filter match-name="Contratos"/>
-  <table-filter match-name="Autorizaciones"/>
-  <table-filter match-name="Pacientes"/>
-  <table-filter match-name="Pedidos"/>
+  <table-filter match-name="MedicamentosPorProveedor"/>
 </hibernate-reverse-engineering>
