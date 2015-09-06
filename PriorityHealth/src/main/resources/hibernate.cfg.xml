@@ -15,8 +15,8 @@
     <mapping class="com.mycompany.priorityhealth.Contratos"/>
     <mapping class="com.mycompany.priorityhealth.Medicamentos"/>
     <mapping class="com.mycompany.priorityhealth.Autorizaciones"/>
-    <mapping class="com.mycompany.priorityhealth.Pacientes"/>
     <mapping class="com.mycompany.priorityhealth.Inventario"/>
+    <mapping class="com.mycompany.priorityhealth.Pacientes"/>
     <mapping class="com.mycompany.priorityhealth.Proveedores"/>
     <mapping class="com.mycompany.priorityhealth.OrdenesCompra"/>
     <mapping class="com.mycompany.priorityhealth.ContratosId"/>
