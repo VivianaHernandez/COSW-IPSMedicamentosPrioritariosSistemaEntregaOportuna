@@ -30,7 +30,7 @@ public class Proveedores  implements java.io.Serializable {
 
     public Proveedores() {
     }
-
+  
 	
     public Proveedores(int idProveedores) {
         this.idProveedores = idProveedores;
