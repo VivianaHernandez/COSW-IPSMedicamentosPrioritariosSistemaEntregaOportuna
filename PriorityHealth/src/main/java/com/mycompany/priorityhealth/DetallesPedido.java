@@ -1,5 +1,5 @@
 package com.mycompany.priorityhealth;
-// Generated 6/09/2015 06:12:41 PM by Hibernate Tools 4.3.1
+// Generated 6/09/2015 06:30:10 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;

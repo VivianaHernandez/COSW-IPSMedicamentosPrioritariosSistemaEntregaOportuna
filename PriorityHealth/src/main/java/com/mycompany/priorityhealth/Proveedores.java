@@ -1,5 +1,5 @@
 package com.mycompany.priorityhealth;
-// Generated 6/09/2015 06:12:41 PM by Hibernate Tools 4.3.1
+// Generated 6/09/2015 06:30:10 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -30,11 +30,11 @@ public class Proveedores  implements java.io.Serializable {
 
     public Proveedores() {
     }
-  
+
 	
     public Proveedores(int idProveedores) {
         this.idProveedores = idProveedores;
-    }  
+    }
     public Proveedores(int idProveedores, String nombre, String telefono, String direccion, String pais, Set medicamentosPorProveedors) {
        this.idProveedores = idProveedores;
        this.nombre = nombre;
