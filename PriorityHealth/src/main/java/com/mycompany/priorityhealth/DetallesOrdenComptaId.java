@@ -3,6 +3,7 @@ package com.mycompany.priorityhealth;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -27,13 +28,14 @@ public class DetallesOrdenComptaId  implements java.io.Serializable {
     public DetallesOrdenComptaId(int idDetallesOrdenComptaId) {
         this.idDetallesOrdenComptaId = idDetallesOrdenComptaId;
     }
-    public DetallesOrdenComptaId(int idDetallesOrdenComptaId, Integer idMedicamento, Integer idOrdenCompra) {
+    public DetallesOrdenComptaId(Integer idMedicamento, Integer idOrdenCompra) {
        this.idDetallesOrdenComptaId = idDetallesOrdenComptaId;
        this.idMedicamento = idMedicamento;
        this.idOrdenCompra = idOrdenCompra;
     }
    
     @Id 
+    @GeneratedValue
     @Column(name="idDetallesOrdenComptaId", unique=true, nullable=false)
     public int getIdDetallesOrdenComptaId() {
         return this.idDetallesOrdenComptaId;
