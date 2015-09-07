@@ -4,11 +4,13 @@ package com.mycompany.priorityhealth;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -46,7 +48,7 @@ public class OrdenesCompra  implements java.io.Serializable {
     }
    
     @Id 
-    @GeneratedValue
+
     @Column(name="idOrdenesCompra", unique=true, nullable=false)
     public int getIdOrdenesCompra() {
         return this.idOrdenesCompra;
@@ -76,7 +78,8 @@ public class OrdenesCompra  implements java.io.Serializable {
         this.fecha = fecha;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="ordenesCompra")
+    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+	@JoinColumn(name="ORDENESCOMPRA_idOrdenesCompra")
     public Set<DetallesOrdenComptaId> getDetallesOrdenComtaId() {
         return this.almDetallesCompra;
     }
