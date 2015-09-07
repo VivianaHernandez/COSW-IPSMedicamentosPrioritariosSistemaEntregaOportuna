@@ -9,6 +9,7 @@
   <table-filter match-name="Pacientes"/>
   <table-filter match-name="Mensajeros"/>
   <table-filter match-name="DetallesPedido"/>
+  <table-filter match-name="DetallesOrdenComptaId"/>
   <table-filter match-name="Proveedores"/>
   <table-filter match-name="Inventario"/>
   <table-filter match-name="Pedidos"/>

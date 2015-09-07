@@ -1,13 +1,16 @@
 package com.mycompany.simplepersistencelayer;
 
 import com.mycompany.priorityhealth.DetallesPedido;
+import com.mycompany.priorityhealth.Medicamento;
 import com.mycompany.priorityhealth.MedicamentosPorProveedor;
+import com.mycompany.priorityhealth.OrdenesCompra;
 import com.mycompany.priorityhealth.Paciente;
 import com.mycompany.priorityhealth.Pedido;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
@@ -18,13 +21,17 @@ public class SimplePersistenceFacade {
     
     /*--------------------------------------------------------------------------
     ----------------------------------------------------------------------------
-    * Nombre metodo:
-    * Objetivo Metodo:
-    * Parametros:  
+    * Nombre metodo:Registrar Nueva orden De Compra
+    * Objetivo Metodo: Registrar una nueva orden de compra y registrar la recepción 
+    de dichos medicamentos
+    * Parametros:  Conjunto de medicamnetos, cantidades e identificacion respectiva
+    * Descripcion: Dado un conjunto de medicamentos, y sus respectivas cantidades e identificación
+    de los proveedores(que ya deberían estar registrados),registrar una nueva orden de compra. 
+    Registrar la recepción de dichos medicamentos
     --------------------------------------------------------------------------*/
-    public static void registrarNuevaOrdenDeCompra()
+    public static void registrarNuevaOrdenDeCompra(Session s, Set<Medicamento> medicamentos,int[] identificadoresmedicamentos, int[] cantidades)
     {
-       /*viviana*/  
+       
     
     }
     
