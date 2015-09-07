@@ -30,7 +30,7 @@ public class SimpleMainProgram {
         Transaction tx=session.beginTransaction();
         //SimplePersistenceFacade.registrarSolicitudesMedicamento(session,79571373, 1922);
         
-        registrarOrdenCompraPrueba(session);
+       // registrarOrdenCompraPrueba(session);
         
         tx.commit();
         session.close();
