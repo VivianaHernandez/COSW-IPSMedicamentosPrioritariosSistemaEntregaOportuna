@@ -23,29 +23,29 @@ import javax.persistence.TemporalType;
 @Table(name="Autorizaciones"
     ,catalog="cosw2"
 )
-public class Autorizaciones  implements java.io.Serializable {
+public class Autorizacion  implements java.io.Serializable {
 
 
      private int numero;
-     private Epsafilidas epsafilidas;
+     private Epsafilida epsafilida;
      private Date fechaExpedicion;
      private Date fechaVencimiento;
-     private Set medicamentoses = new HashSet(0);
+     private Set<Medicamento> medicamentos = new HashSet(0);
 
-    public Autorizaciones() {
+    public Autorizacion() {
     }
 
 	
-    public Autorizaciones(int numero, Epsafilidas epsafilidas) {
+    public Autorizacion(int numero, Epsafilida epsafilida) {
         this.numero = numero;
-        this.epsafilidas = epsafilidas;
+        this.epsafilida = epsafilida;
     }
-    public Autorizaciones(int numero, Epsafilidas epsafilidas, Date fechaExpedicion, Date fechaVencimiento, Set medicamentoses) {
+    public Autorizacion(int numero, Epsafilida epsafilida, Date fechaExpedicion, Date fechaVencimiento, Set<Medicamento> medicamentos) {
        this.numero = numero;
-       this.epsafilidas = epsafilidas;
+       this.epsafilida = epsafilida;
        this.fechaExpedicion = fechaExpedicion;
        this.fechaVencimiento = fechaVencimiento;
-       this.medicamentoses = medicamentoses;
+       this.medicamentos = medicamentos;
     }
    
      @Id 
@@ -62,12 +62,12 @@ public class Autorizaciones  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="EPSAfilidas_idEPS", nullable=false)
-    public Epsafilidas getEpsafilidas() {
-        return this.epsafilidas;
+    public Epsafilida getEpsafilida() {
+        return this.epsafilida;
     }
     
-    public void setEpsafilidas(Epsafilidas epsafilidas) {
-        this.epsafilidas = epsafilidas;
+    public void setEpsafilida(Epsafilida epsafilida) {
+        this.epsafilida = epsafilida;
     }
 
     @Temporal(TemporalType.DATE)
@@ -91,12 +91,12 @@ public class Autorizaciones  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="autorizaciones")
-    public Set getMedicamentoses() {
-        return this.medicamentoses;
+    public Set<Medicamento> getMedicamentos() {
+        return this.medicamentos;
     }
     
-    public void setMedicamentoses(Set medicamentoses) {
-        this.medicamentoses = medicamentoses;
+    public void setMedicamentos(Set<Medicamento> medicamentos) {
+        this.medicamentos = medicamentos;
     }
 
 

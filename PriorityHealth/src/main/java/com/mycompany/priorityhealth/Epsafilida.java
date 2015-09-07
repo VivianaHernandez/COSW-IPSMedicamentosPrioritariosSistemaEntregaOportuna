@@ -18,34 +18,34 @@ import javax.persistence.Table;
 @Table(name="EPSAfilidas"
     ,catalog="cosw2"
 )
-public class Epsafilidas  implements java.io.Serializable {
+public class Epsafilida  implements java.io.Serializable {
 
 
      private int idEps;
      private String nombre;
      private String regimen;
      private String correo;
-     private Set contratoses = new HashSet(0);
-     private Set autorizacioneses = new HashSet(0);
-     private Set pacienteses = new HashSet(0);
+     private Set<Contrato> contratos = new HashSet(0);
+     private Set<Autorizacion> autorizaciones = new HashSet(0);
+     private Set<Paciente> pacientes = new HashSet(0);
 
-    public Epsafilidas() {
+    public Epsafilida() {
     }
 
 	
-    public Epsafilidas(int idEps, String nombre, String regimen) {
+    public Epsafilida(int idEps, String nombre, String regimen) {
         this.idEps = idEps;
         this.nombre = nombre;
         this.regimen = regimen;
     }
-    public Epsafilidas(int idEps, String nombre, String regimen, String correo, Set contratoses, Set autorizacioneses, Set pacienteses) {
+    public Epsafilida(int idEps, String nombre, String regimen, String correo, Set<Contrato> contratos, Set<Autorizacion> autorizaciones, Set<Paciente> pacientes) {
        this.idEps = idEps;
        this.nombre = nombre;
        this.regimen = regimen;
        this.correo = correo;
-       this.contratoses = contratoses;
-       this.autorizacioneses = autorizacioneses;
-       this.pacienteses = pacienteses;
+       this.contratos = contratos;
+       this.autorizaciones = autorizaciones;
+       this.pacientes = pacientes;
     }
    
      @Id 
@@ -91,30 +91,30 @@ public class Epsafilidas  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilidas")
-    public Set getContratoses() {
-        return this.contratoses;
+    public Set<Contrato> getContratos() {
+        return this.contratos;
     }
     
-    public void setContratoses(Set contratoses) {
-        this.contratoses = contratoses;
+    public void setContratoses(Set<Contrato> contratos) {
+        this.contratos = contratos;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilidas")
-    public Set getAutorizacioneses() {
-        return this.autorizacioneses;
+    public Set<Autorizacion> getAutorizaciones() {
+        return this.autorizaciones;
     }
     
-    public void setAutorizacioneses(Set autorizacioneses) {
-        this.autorizacioneses = autorizacioneses;
+    public void setAutorizaciones(Set<Autorizacion> autorizaciones) {
+        this.autorizaciones = autorizaciones;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilidas")
-    public Set getPacienteses() {
-        return this.pacienteses;
+    public Set<Paciente> getPacientes() {
+        return this.pacientes;
     }
     
-    public void setPacienteses(Set pacienteses) {
-        this.pacienteses = pacienteses;
+    public void setPacientes(Set<Paciente> pacientes) {
+        this.pacientes = pacientes;
     }
 
 

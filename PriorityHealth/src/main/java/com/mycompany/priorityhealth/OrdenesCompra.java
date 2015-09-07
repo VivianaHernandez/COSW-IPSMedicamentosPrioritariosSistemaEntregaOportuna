@@ -23,7 +23,7 @@ public class OrdenesCompra  implements java.io.Serializable {
 
      private int idOrdenesCompra;
      private Integer cantidad;
-     private Set medicamentoses = new HashSet(0);
+     private Set<Medicamento> medicamentos = new HashSet(0);
 
     public OrdenesCompra() {
     }
@@ -32,10 +32,10 @@ public class OrdenesCompra  implements java.io.Serializable {
     public OrdenesCompra(int idOrdenesCompra) {
         this.idOrdenesCompra = idOrdenesCompra;
     }
-    public OrdenesCompra(int idOrdenesCompra, Integer cantidad, Set medicamentoses) {
+    public OrdenesCompra(int idOrdenesCompra, Integer cantidad, Set<Medicamento> medicamentos) {
        this.idOrdenesCompra = idOrdenesCompra;
        this.cantidad = cantidad;
-       this.medicamentoses = medicamentoses;
+       this.medicamentos = medicamentos;
     }
    
      @Id 
@@ -61,12 +61,12 @@ public class OrdenesCompra  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="ordenesCompra")
-    public Set getMedicamentoses() {
-        return this.medicamentoses;
+    public Set<Medicamento> getMedicamentos() {
+        return this.medicamentos;
     }
     
-    public void setMedicamentoses(Set medicamentoses) {
-        this.medicamentoses = medicamentoses;
+    public void setMedicamentoses(Set<Medicamento> medicamentos) {
+        this.medicamentos = medicamentos;
     }
 
 

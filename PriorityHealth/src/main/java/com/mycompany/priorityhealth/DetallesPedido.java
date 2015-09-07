@@ -20,24 +20,24 @@ import javax.persistence.Table;
 public class DetallesPedido  implements java.io.Serializable {
 
 
-     private int idMedicamentos;
+     private int idMedicamento;
      private MedicamentosPorProveedor medicamentosPorProveedor;
-     private Pedidos pedidos;
+     private Pedido pedido;
      private String cantidad;
 
     public DetallesPedido() {
     }
 
 	
-    public DetallesPedido(int idMedicamentos, MedicamentosPorProveedor medicamentosPorProveedor, Pedidos pedidos) {
-        this.idMedicamentos = idMedicamentos;
+    public DetallesPedido(int idMedicamento, MedicamentosPorProveedor medicamentosPorProveedor, Pedido pedido) {
+        this.idMedicamento = idMedicamento;
         this.medicamentosPorProveedor = medicamentosPorProveedor;
-        this.pedidos = pedidos;
+        this.pedido = pedido;
     }
-    public DetallesPedido(int idMedicamentos, MedicamentosPorProveedor medicamentosPorProveedor, Pedidos pedidos, String cantidad) {
-       this.idMedicamentos = idMedicamentos;
+    public DetallesPedido(int idMedicamento, MedicamentosPorProveedor medicamentosPorProveedor, Pedido pedido, String cantidad) {
+       this.idMedicamento = idMedicamento;
        this.medicamentosPorProveedor = medicamentosPorProveedor;
-       this.pedidos = pedidos;
+       this.pedido = pedido;
        this.cantidad = cantidad;
     }
    
@@ -45,12 +45,12 @@ public class DetallesPedido  implements java.io.Serializable {
 
     
     @Column(name="idMedicamentos", unique=true, nullable=false)
-    public int getIdMedicamentos() {
-        return this.idMedicamentos;
+    public int getIdMedicamento() {
+        return this.idMedicamento;
     }
     
-    public void setIdMedicamentos(int idMedicamentos) {
-        this.idMedicamentos = idMedicamentos;
+    public void setIdMedicamento(int idMedicamento) {
+        this.idMedicamento = idMedicamento;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -65,12 +65,12 @@ public class DetallesPedido  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="Pedidos_idPedidos", nullable=false)
-    public Pedidos getPedidos() {
-        return this.pedidos;
+    public Pedido getPedido() {
+        return this.pedido;
     }
     
-    public void setPedidos(Pedidos pedidos) {
-        this.pedidos = pedidos;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
     

@@ -18,42 +18,42 @@ import javax.persistence.Table;
 @Table(name="Proveedores"
     ,catalog="cosw2"
 )
-public class Proveedores  implements java.io.Serializable {
+public class Proveedor  implements java.io.Serializable {
 
 
-     private int idProveedores;
+     private int idProveedor;
      private String nombre;
      private String telefono;
      private String direccion;
      private String pais;
-     private Set medicamentosPorProveedors = new HashSet(0);
+     private Set<MedicamentosPorProveedor> medicamentosPorProveedores = new HashSet(0);
 
-    public Proveedores() {
+    public Proveedor() {
     }
 
 	
-    public Proveedores(int idProveedores) {
-        this.idProveedores = idProveedores;
+    public Proveedor(int idProveedor) {
+        this.idProveedor = idProveedor;
     }
-    public Proveedores(int idProveedores, String nombre, String telefono, String direccion, String pais, Set medicamentosPorProveedors) {
-       this.idProveedores = idProveedores;
+    public Proveedor(int idProveedor, String nombre, String telefono, String direccion, String pais, Set<MedicamentosPorProveedor> medicamentosPorProveedores) {
+       this.idProveedor = idProveedor;
        this.nombre = nombre;
        this.telefono = telefono;
        this.direccion = direccion;
        this.pais = pais;
-       this.medicamentosPorProveedors = medicamentosPorProveedors;
+       this.medicamentosPorProveedores = medicamentosPorProveedores;
     }
    
      @Id 
 
     
     @Column(name="idProveedores", unique=true, nullable=false)
-    public int getIdProveedores() {
-        return this.idProveedores;
+    public int getIdProveedor() {
+        return this.idProveedor;
     }
     
-    public void setIdProveedores(int idProveedores) {
-        this.idProveedores = idProveedores;
+    public void setIdProveedor(int idProveedor) {
+        this.idProveedor = idProveedor;
     }
 
     
@@ -97,12 +97,12 @@ public class Proveedores  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="proveedores")
-    public Set getMedicamentosPorProveedors() {
-        return this.medicamentosPorProveedors;
+    public Set<MedicamentosPorProveedor> getMedicamentosPorProveedores() {
+        return this.medicamentosPorProveedores;
     }
     
-    public void setMedicamentosPorProveedors(Set medicamentosPorProveedors) {
-        this.medicamentosPorProveedors = medicamentosPorProveedors;
+    public void setMedicamentosPorProveedores(Set<MedicamentosPorProveedor> medicamentosPorProveedor) {
+        this.medicamentosPorProveedores = medicamentosPorProveedor;
     }
 
 

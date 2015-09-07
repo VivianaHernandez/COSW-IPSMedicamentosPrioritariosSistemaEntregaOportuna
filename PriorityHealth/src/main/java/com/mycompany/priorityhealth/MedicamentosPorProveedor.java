@@ -24,29 +24,29 @@ public class MedicamentosPorProveedor  implements java.io.Serializable {
 
 
      private int idDetalleCompra;
-     private Medicamentos medicamentos;
-     private Proveedores proveedores;
-     private Integer idProveedores;
-     private Integer idMedicamentos;
+     private Medicamento medicamento;
+     private Proveedor proveedor;
+     private Integer idProveedor;
+     private Integer idMedicamento;
      private String precio;
-     private Set detallesPedidos = new HashSet(0);
-     private Set inventarios = new HashSet(0);
+     private Set<DetallesPedido> detallesPedidos = new HashSet(0);
+     private Set<Inventario> inventarios = new HashSet(0);
 
     public MedicamentosPorProveedor() {
     }
 
 	
-    public MedicamentosPorProveedor(int idDetalleCompra, Medicamentos medicamentos, Proveedores proveedores) {
+    public MedicamentosPorProveedor(int idDetalleCompra, Medicamento medicamento, Proveedor proveedor) {
         this.idDetalleCompra = idDetalleCompra;
-        this.medicamentos = medicamentos;
-        this.proveedores = proveedores;
+        this.medicamento = medicamento;
+        this.proveedor = proveedor;
     }
-    public MedicamentosPorProveedor(int idDetalleCompra, Medicamentos medicamentos, Proveedores proveedores, Integer idProveedores, Integer idMedicamentos, String precio, Set detallesPedidos, Set inventarios) {
+    public MedicamentosPorProveedor(int idDetalleCompra, Medicamento medicamento, Proveedor proveedor, Integer idProveedor, Integer idMedicamento, String precio, Set<DetallesPedido> detallesPedidos, Set<Inventario> inventarios) {
        this.idDetalleCompra = idDetalleCompra;
-       this.medicamentos = medicamentos;
-       this.proveedores = proveedores;
-       this.idProveedores = idProveedores;
-       this.idMedicamentos = idMedicamentos;
+       this.medicamento = medicamento;
+       this.proveedor = proveedor;
+       this.idProveedor = idProveedor;
+       this.idMedicamento = idMedicamento;
        this.precio = precio;
        this.detallesPedidos = detallesPedidos;
        this.inventarios = inventarios;
@@ -66,42 +66,42 @@ public class MedicamentosPorProveedor  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="Medicamentos_idMedicamentos", nullable=false)
-    public Medicamentos getMedicamentos() {
-        return this.medicamentos;
+    public Medicamento getMedicamento() {
+        return this.medicamento;
     }
     
-    public void setMedicamentos(Medicamentos medicamentos) {
-        this.medicamentos = medicamentos;
+    public void setMedicamento(Medicamento medicamento) {
+        this.medicamento = medicamento;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="Proveedores_idProveedores", nullable=false)
-    public Proveedores getProveedores() {
-        return this.proveedores;
+    public Proveedor getProveedor() {
+        return this.proveedor;
     }
     
-    public void setProveedores(Proveedores proveedores) {
-        this.proveedores = proveedores;
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
     }
 
     
     @Column(name="idProveedores")
-    public Integer getIdProveedores() {
-        return this.idProveedores;
+    public Integer getIdProveedor() {
+        return this.idProveedor;
     }
     
-    public void setIdProveedores(Integer idProveedores) {
-        this.idProveedores = idProveedores;
+    public void setIdProveedor(Integer idProveedor) {
+        this.idProveedor = idProveedor;
     }
 
     
     @Column(name="idMedicamentos")
-    public Integer getIdMedicamentos() {
-        return this.idMedicamentos;
+    public Integer getIdMedicamento() {
+        return this.idMedicamento;
     }
     
-    public void setIdMedicamentos(Integer idMedicamentos) {
-        this.idMedicamentos = idMedicamentos;
+    public void setIdMedicamento(Integer idMedicamento) {
+        this.idMedicamento = idMedicamento;
     }
 
     
@@ -115,20 +115,20 @@ public class MedicamentosPorProveedor  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="medicamentosPorProveedor")
-    public Set getDetallesPedidos() {
+    public Set<DetallesPedido> getDetallesPedidos() {
         return this.detallesPedidos;
     }
     
-    public void setDetallesPedidos(Set detallesPedidos) {
+    public void setDetallesPedidos(Set<DetallesPedido> detallesPedidos) {
         this.detallesPedidos = detallesPedidos;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="medicamentosPorProveedor")
-    public Set getInventarios() {
+    public Set<Inventario> getInventarios() {
         return this.inventarios;
     }
     
-    public void setInventarios(Set inventarios) {
+    public void setInventarios(Set<Inventario>  inventarios) {
         this.inventarios = inventarios;
     }
 

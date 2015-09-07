@@ -17,28 +17,28 @@ import javax.persistence.Table;
 @Table(name="Despachos"
     ,catalog="cosw2"
 )
-public class Despachos  implements java.io.Serializable {
+public class Despacho  implements java.io.Serializable {
 
 
      private int idDespacho;
-     private Mensajeros mensajeros;
-     private Pedidos pedidos;
+     private Mensajero mensajero;
+     private Pedido pedido;
      private String estado;
      private String numeroPagoCoutaModeradora;
 
-    public Despachos() {
+    public Despacho() {
     }
 
 	
-    public Despachos(int idDespacho, Mensajeros mensajeros, Pedidos pedidos) {
+    public Despacho(int idDespacho, Mensajero mensajero, Pedido pedido) {
         this.idDespacho = idDespacho;
-        this.mensajeros = mensajeros;
-        this.pedidos = pedidos;
+        this.mensajero = mensajero;
+        this.pedido = pedido;
     }
-    public Despachos(int idDespacho, Mensajeros mensajeros, Pedidos pedidos, String estado, String numeroPagoCoutaModeradora) {
+    public Despacho(int idDespacho, Mensajero mensajero, Pedido pedido, String estado, String numeroPagoCoutaModeradora) {
        this.idDespacho = idDespacho;
-       this.mensajeros = mensajeros;
-       this.pedidos = pedidos;
+       this.mensajero = mensajero;
+       this.pedido = pedido;
        this.estado = estado;
        this.numeroPagoCoutaModeradora = numeroPagoCoutaModeradora;
     }
@@ -57,22 +57,22 @@ public class Despachos  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="Mensajeros_idEmpleados", nullable=false)
-    public Mensajeros getMensajeros() {
-        return this.mensajeros;
+    public Mensajero getMensajero() {
+        return this.mensajero;
     }
     
-    public void setMensajeros(Mensajeros mensajeros) {
-        this.mensajeros = mensajeros;
+    public void setMensajeros(Mensajero mensajero) {
+        this.mensajero = mensajero;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="Pedidos_idPedidos", nullable=false)
-    public Pedidos getPedidos() {
-        return this.pedidos;
+    public Pedido getPedidos() {
+        return this.pedido;
     }
     
-    public void setPedidos(Pedidos pedidos) {
-        this.pedidos = pedidos;
+    public void setPedidos(Pedido pedido) {
+        this.pedido = pedido;
     }
 
     

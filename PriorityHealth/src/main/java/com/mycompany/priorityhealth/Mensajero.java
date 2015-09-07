@@ -18,46 +18,46 @@ import javax.persistence.Table;
 @Table(name="Mensajeros"
     ,catalog="cosw2"
 )
-public class Mensajeros  implements java.io.Serializable {
+public class Mensajero  implements java.io.Serializable {
 
 
-     private int idEmpleados;
+     private int idEmpleado;
      private String nombre;
      private String cargo;
      private String salario;
      private Integer telefono;
      private String direccion;
      private String correo;
-     private Set despachoses = new HashSet(0);
+     private Set<Despacho> despachos = new HashSet(0);
 
-    public Mensajeros() {
+    public Mensajero() {
     }
 
 	
-    public Mensajeros(int idEmpleados) {
-        this.idEmpleados = idEmpleados;
+    public Mensajero(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
-    public Mensajeros(int idEmpleados, String nombre, String cargo, String salario, Integer telefono, String direccion, String correo, Set despachoses) {
-       this.idEmpleados = idEmpleados;
+    public Mensajero(int idEmpleado, String nombre, String cargo, String salario, Integer telefono, String direccion, String correo, Set<Despacho> despachos) {
+       this.idEmpleado = idEmpleado;
        this.nombre = nombre;
        this.cargo = cargo;
        this.salario = salario;
        this.telefono = telefono;
        this.direccion = direccion;
        this.correo = correo;
-       this.despachoses = despachoses;
+       this.despachos = despachos;
     }
    
      @Id 
 
     
     @Column(name="idEmpleados", unique=true, nullable=false)
-    public int getIdEmpleados() {
-        return this.idEmpleados;
+    public int getIdEmpleado() {
+        return this.idEmpleado;
     }
     
-    public void setIdEmpleados(int idEmpleados) {
-        this.idEmpleados = idEmpleados;
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     
@@ -121,12 +121,12 @@ public class Mensajeros  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="mensajeros")
-    public Set getDespachoses() {
-        return this.despachoses;
+    public Set<Despacho> getDespachos() {
+        return this.despachos;
     }
     
-    public void setDespachoses(Set despachoses) {
-        this.despachoses = despachoses;
+    public void setDespachos(Set<Despacho> despachos) {
+        this.despachos = despachos;
     }
 
 

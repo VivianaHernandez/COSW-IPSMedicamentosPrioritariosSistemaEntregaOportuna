@@ -23,11 +23,11 @@ import javax.persistence.TemporalType;
 @Table(name="Medicamentos"
     ,catalog="cosw2"
 )
-public class Medicamentos  implements java.io.Serializable {
+public class Medicamento  implements java.io.Serializable {
 
 
-     private int idMedicamentos;
-     private Autorizaciones autorizaciones;
+     private int idMedicamento;
+     private Autorizacion autorizacion;
      private OrdenesCompra ordenesCompra;
      private String nombre;
      private String descripcion;
@@ -36,18 +36,18 @@ public class Medicamentos  implements java.io.Serializable {
      private Date fechaVencimiento;
      private Set medicamentosPorProveedors = new HashSet(0);
 
-    public Medicamentos() {
+    public Medicamento() {
     }
 
 	
-    public Medicamentos(int idMedicamentos, Autorizaciones autorizaciones, OrdenesCompra ordenesCompra) {
-        this.idMedicamentos = idMedicamentos;
-        this.autorizaciones = autorizaciones;
+    public Medicamento(int idMedicamento, Autorizacion autorizacion, OrdenesCompra ordenesCompra) {
+        this.idMedicamento = idMedicamento;
+        this.autorizacion = autorizacion;
         this.ordenesCompra = ordenesCompra;
     }
-    public Medicamentos(int idMedicamentos, Autorizaciones autorizaciones, OrdenesCompra ordenesCompra, String nombre, String descripcion, String presentacion, Date fechaExpedicion, Date fechaVencimiento, Set medicamentosPorProveedors) {
-       this.idMedicamentos = idMedicamentos;
-       this.autorizaciones = autorizaciones;
+    public Medicamento(int idMedicamento, Autorizacion autorizacion, OrdenesCompra ordenesCompra, String nombre, String descripcion, String presentacion, Date fechaExpedicion, Date fechaVencimiento, Set<MedicamentosPorProveedor> medicamentosPorProveedors) {
+       this.idMedicamento = idMedicamento;
+       this.autorizacion = autorizacion;
        this.ordenesCompra = ordenesCompra;
        this.nombre = nombre;
        this.descripcion = descripcion;
@@ -61,22 +61,22 @@ public class Medicamentos  implements java.io.Serializable {
 
     
     @Column(name="idMedicamentos", unique=true, nullable=false)
-    public int getIdMedicamentos() {
-        return this.idMedicamentos;
+    public int getIdMedicamento() {
+        return this.idMedicamento;
     }
     
-    public void setIdMedicamentos(int idMedicamentos) {
-        this.idMedicamentos = idMedicamentos;
+    public void setIdMedicamento(int idMedicamento) {
+        this.idMedicamento = idMedicamento;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="Autorizaciones_numero", nullable=false)
-    public Autorizaciones getAutorizaciones() {
-        return this.autorizaciones;
+    public Autorizacion getAutorizacion() {
+        return this.autorizacion;
     }
     
-    public void setAutorizaciones(Autorizaciones autorizaciones) {
-        this.autorizaciones = autorizaciones;
+    public void setAutorizacion(Autorizacion autorizacion) {
+        this.autorizacion = autorizacion;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
@@ -140,11 +140,11 @@ public class Medicamentos  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="medicamentos")
-    public Set getMedicamentosPorProveedors() {
+    public Set<MedicamentosPorProveedor> getMedicamentosPorProveedors() {
         return this.medicamentosPorProveedors;
     }
     
-    public void setMedicamentosPorProveedors(Set medicamentosPorProveedors) {
+    public void setMedicamentosPorProveedors(Set<MedicamentosPorProveedor> medicamentosPorProveedors) {
         this.medicamentosPorProveedors = medicamentosPorProveedors;
     }
 

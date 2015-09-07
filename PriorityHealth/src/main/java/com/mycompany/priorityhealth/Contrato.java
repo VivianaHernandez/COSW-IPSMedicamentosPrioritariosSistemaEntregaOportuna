@@ -19,26 +19,26 @@ import javax.persistence.Table;
 @Table(name="Contratos"
     ,catalog="cosw2"
 )
-public class Contratos  implements java.io.Serializable {
+public class Contrato  implements java.io.Serializable {
 
 
-     private ContratosId id;
-     private Epsafilidas epsafilidas;
+     private ContratoId id;
+     private Epsafilida epsafilida;
      private String descripcion;
      private String numeroAfiliados;
      private String precioPorAfiliado;
 
-    public Contratos() {
+    public Contrato() {
     }
 
 	
-    public Contratos(ContratosId id, Epsafilidas epsafilidas) {
+    public Contrato(ContratoId id, Epsafilida epsafilida) {
         this.id = id;
-        this.epsafilidas = epsafilidas;
+        this.epsafilida = epsafilida;
     }
-    public Contratos(ContratosId id, Epsafilidas epsafilidas, String descripcion, String numeroAfiliados, String precioPorAfiliado) {
+    public Contrato(ContratoId id, Epsafilida epsafilida, String descripcion, String numeroAfiliados, String precioPorAfiliado) {
        this.id = id;
-       this.epsafilidas = epsafilidas;
+       this.epsafilida = epsafilida;
        this.descripcion = descripcion;
        this.numeroAfiliados = numeroAfiliados;
        this.precioPorAfiliado = precioPorAfiliado;
@@ -50,22 +50,22 @@ public class Contratos  implements java.io.Serializable {
     @AttributeOverrides( {
         @AttributeOverride(name="idContratos", column=@Column(name="idContratos", nullable=false) ), 
         @AttributeOverride(name="epsafilidasIdEps", column=@Column(name="EPSAfilidas_idEPS", nullable=false) ) } )
-    public ContratosId getId() {
+    public ContratoId getId() {
         return this.id;
     }
     
-    public void setId(ContratosId id) {
+    public void setId(ContratoId id) {
         this.id = id;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="EPSAfilidas_idEPS", nullable=false, insertable=false, updatable=false)
-    public Epsafilidas getEpsafilidas() {
-        return this.epsafilidas;
+    public Epsafilida getEpsafilida() {
+        return this.epsafilida;
     }
     
-    public void setEpsafilidas(Epsafilidas epsafilidas) {
-        this.epsafilidas = epsafilidas;
+    public void setEpsafilida(Epsafilida epsafilida) {
+        this.epsafilida = epsafilida;
     }
 
     
