@@ -29,7 +29,8 @@ public class OrdenesCompra  implements java.io.Serializable {
      private Date fecha;
      private Set medicamentoses = new HashSet(0);
 
-    public OrdenesCompra() {
+    public OrdenesCompra(Date fecha) {
+        this.fecha=fecha;
     }
 
 	
