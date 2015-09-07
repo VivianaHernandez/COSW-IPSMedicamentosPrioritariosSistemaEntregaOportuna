@@ -3,6 +3,7 @@ package com.mycompany.simplepersistencelayer;
 
 import com.mycompany.priorityhealth.Despacho;
 import com.mycompany.priorityhealth.Mensajero;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -29,10 +30,33 @@ public class SimpleMainProgram {
         Transaction tx=session.beginTransaction();
         //SimplePersistenceFacade.registrarSolicitudesMedicamento(session,79571373, 1922);
         
-        //SimplePersistenceFacade.operacionASerUtilizada(p1,p2);
+        registrarOrdenCompraPrueba(session);
         
         tx.commit();
         session.close();
     }
     
-}
+    //////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    public static void registrarOrdenCompraPrueba(Session session)
+    {
+      Query q1=session.createQuery("Select m from Medicamentos m");
+      List<Integer> lista1=q1.list();
+        
+      int identificadoresmedicamentos[]= new int[2];
+      identificadoresmedicamentos[0]=lista1.get(0);
+      identificadoresmedicamentos[1]=lista1.get(1);
+      
+      System.out.println("prueba..............."+identificadoresmedicamentos[1]);
+      
+      int cantidades[]=new int[2];
+      cantidades[0]=3;
+      cantidades[1]=5;
+      
+      Date fecha=new Date(2015-05-15);
+        
+     SimplePersistenceFacade.registrarNuevaOrdenDeCompra(session, identificadoresmedicamentos, cantidades, fecha);
+    
+    }
+}   
