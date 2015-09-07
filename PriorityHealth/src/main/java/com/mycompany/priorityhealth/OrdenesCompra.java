@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -27,7 +28,7 @@ public class OrdenesCompra  implements java.io.Serializable {
      private int idOrdenesCompra;
      private Integer cantidad;
      private Date fecha;
-     private Set medicamentoses = new HashSet(0);
+     private Set<DetallesOrdenComptaId> almDetallesCompra = new HashSet<DetallesOrdenComptaId>(0);
 
     public OrdenesCompra(Date fecha) {
         this.fecha=fecha;
@@ -37,16 +38,15 @@ public class OrdenesCompra  implements java.io.Serializable {
     public OrdenesCompra(int idOrdenesCompra) {
         this.idOrdenesCompra = idOrdenesCompra;
     }
-    public OrdenesCompra(int idOrdenesCompra, Integer cantidad, Date fecha, Set medicamentoses) {
+    public OrdenesCompra(int idOrdenesCompra, Integer cantidad, Date fecha,  Set<DetallesOrdenComptaId> almDetallesCompra) {
        this.idOrdenesCompra = idOrdenesCompra;
        this.cantidad = cantidad;
        this.fecha = fecha;
-       this.medicamentoses = medicamentoses;
+       this.almDetallesCompra = almDetallesCompra;
     }
    
-     @Id 
-
-    
+    @Id 
+    @GeneratedValue
     @Column(name="idOrdenesCompra", unique=true, nullable=false)
     public int getIdOrdenesCompra() {
         return this.idOrdenesCompra;
@@ -77,12 +77,12 @@ public class OrdenesCompra  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="ordenesCompra")
-    public Set getMedicamentoses() {
-        return this.medicamentoses;
+    public Set<DetallesOrdenComptaId> getMedicamentoses() {
+        return this.almDetallesCompra;
     }
     
-    public void setMedicamentoses(Set medicamentoses) {
-        this.medicamentoses = medicamentoses;
+    public void setMedicamentoses(Set<DetallesOrdenComptaId> almDetallesCompra) {
+        this.almDetallesCompra = almDetallesCompra;
     }
 
 
