@@ -84,11 +84,11 @@ public class SimplePersistenceFacade {
     
     /*--------------------------------------------------------------------------
     ----------------------------------------------------------------------------
-    * Nombre metodo:
-    * Objetivo Metodo:
-    * Parametros:  
+    * Nombre metodo: registrarEntregaMedicamento
+    * Objetivo Metodo: 
+    * Parametros:    
     --------------------------------------------------------------------------*/
-    public static void registrarEntregaMedicamento()
+    public static void  registrarEntregaMedicamento()
     {
          
     /*Leidy*/
