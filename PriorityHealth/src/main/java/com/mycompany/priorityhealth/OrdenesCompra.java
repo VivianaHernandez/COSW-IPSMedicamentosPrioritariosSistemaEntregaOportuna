@@ -65,7 +65,7 @@ public class OrdenesCompra  implements java.io.Serializable {
         return this.medicamentos;
     }
     
-    public void setMedicamentoses(Set<Medicamento> medicamentos) {
+    public void setMedicamentos(Set<Medicamento> medicamentos) {
         this.medicamentos = medicamentos;
     }
 

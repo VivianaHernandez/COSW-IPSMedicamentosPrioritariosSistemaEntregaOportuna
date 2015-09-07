@@ -96,7 +96,7 @@ public class Proveedor  implements java.io.Serializable {
         this.pais = pais;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="proveedores")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="proveedor")
     public Set<MedicamentosPorProveedor> getMedicamentosPorProveedores() {
         return this.medicamentosPorProveedores;
     }

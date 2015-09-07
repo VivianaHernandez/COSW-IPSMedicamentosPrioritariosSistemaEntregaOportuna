@@ -90,7 +90,7 @@ public class Autorizacion  implements java.io.Serializable {
         this.fechaVencimiento = fechaVencimiento;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="autorizaciones")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="autorizacion")
     public Set<Medicamento> getMedicamentos() {
         return this.medicamentos;
     }

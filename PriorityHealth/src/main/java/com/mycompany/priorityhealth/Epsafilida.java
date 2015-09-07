@@ -90,16 +90,16 @@ public class Epsafilida  implements java.io.Serializable {
         this.correo = correo;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilidas")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilida")
     public Set<Contrato> getContratos() {
         return this.contratos;
     }
     
-    public void setContratoses(Set<Contrato> contratos) {
+    public void setContratos(Set<Contrato> contratos) {
         this.contratos = contratos;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilidas")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilida")
     public Set<Autorizacion> getAutorizaciones() {
         return this.autorizaciones;
     }
@@ -108,7 +108,7 @@ public class Epsafilida  implements java.io.Serializable {
         this.autorizaciones = autorizaciones;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilidas")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="epsafilida")
     public Set<Paciente> getPacientes() {
         return this.pacientes;
     }

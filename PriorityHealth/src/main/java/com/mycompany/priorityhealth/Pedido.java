@@ -101,7 +101,7 @@ public class Pedido  implements java.io.Serializable {
         this.despachos = despachos;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="pedidos")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="pedido")
     public Set<DetallesPedido> getDetallesPedidos() {
         return this.detallesPedidos;
     }

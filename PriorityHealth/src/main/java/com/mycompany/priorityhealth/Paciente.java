@@ -99,7 +99,7 @@ public class Paciente  implements java.io.Serializable {
         this.direccion = direccion;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="pacientes")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="paciente")
     public Set<Pedido> getPedidos() {
         return this.pedidos;
     }

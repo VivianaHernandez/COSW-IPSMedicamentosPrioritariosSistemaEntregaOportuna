@@ -120,7 +120,7 @@ public class Mensajero  implements java.io.Serializable {
         this.correo = correo;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="mensajeros")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="mensajero")
     public Set<Despacho> getDespachos() {
         return this.despachos;
     }

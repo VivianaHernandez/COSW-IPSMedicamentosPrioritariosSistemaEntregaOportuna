@@ -139,7 +139,7 @@ public class Medicamento  implements java.io.Serializable {
         this.fechaVencimiento = fechaVencimiento;
     }
 
-@OneToMany(fetch=FetchType.LAZY, mappedBy="medicamentos")
+@OneToMany(fetch=FetchType.LAZY, mappedBy="medicamento")
     public Set<MedicamentosPorProveedor> getMedicamentosPorProveedors() {
         return this.medicamentosPorProveedors;
     }

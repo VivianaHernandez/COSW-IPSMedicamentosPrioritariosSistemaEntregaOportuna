@@ -61,7 +61,7 @@ public class Despacho  implements java.io.Serializable {
         return this.mensajero;
     }
     
-    public void setMensajeros(Mensajero mensajero) {
+    public void setMensajero(Mensajero mensajero) {
         this.mensajero = mensajero;
     }
 
