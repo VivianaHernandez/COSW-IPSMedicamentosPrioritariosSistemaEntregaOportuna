@@ -1,5 +1,6 @@
 package com.mycompany.simplepersistencelayer;
 
+import com.mycompany.priorityhealth.DetallesOrdenComptaId;
 import com.mycompany.priorityhealth.DetallesPedido;
 import com.mycompany.priorityhealth.Medicamento;
 import com.mycompany.priorityhealth.MedicamentosPorProveedor;
@@ -9,6 +10,7 @@ import com.mycompany.priorityhealth.Pedido;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.Query;
@@ -24,14 +26,31 @@ public class SimplePersistenceFacade {
     * Nombre metodo:Registrar Nueva orden De Compra
     * Objetivo Metodo: Registrar una nueva orden de compra y registrar la recepción 
     de dichos medicamentos
-    * Parametros:  Conjunto de medicamnetos, cantidades e identificacion respectiva
-    * Descripcion: Dado un conjunto de medicamentos, y sus respectivas cantidades e identificación
-    de los proveedores(que ya deberían estar registrados),registrar una nueva orden de compra. 
-    Registrar la recepción de dichos medicamentos
+    * Parametros:  Conjunto de idmedicamentos, cantidades,fecha e identificacion respectiva
     --------------------------------------------------------------------------*/
-    public static void registrarNuevaOrdenDeCompra(Session s, Set<Medicamento> medicamentos,int[] identificadoresmedicamentos, int[] cantidades)
-    {
+    public static void registrarNuevaOrdenDeCompra(Session s, int[] identificadoresmedicamentos, int[] cantidades, Date fecha)
+    {  
+           /*Registrar una nueva ordenDE Compra*/
+           OrdenesCompra ordenCompra=new OrdenesCompra(fecha);
+           s.save(ordenCompra);
        
+           int idenMedicamento=identificadoresmedicamentos[0];
+           int cantidad=cantidades[0];
+           Set<DetallesOrdenComptaId> almDetallesPedidos = new HashSet<DetallesOrdenComptaId>();
+           DetallesOrdenComptaId dpid;
+           
+           for(int i=0;i<identificadoresmedicamentos.length;i++)
+           {
+           idenMedicamento=identificadoresmedicamentos[i];
+           cantidad=cantidades[i];
+           dpid=new DetallesOrdenComptaId(idenMedicamento,ordenCompra.getIdOrdenesCompra(),cantidad);
+           s.save(dpid);
+           } 
+           ordenCompra.setDetallesOrdenComtaId(almDetallesPedidos);
+           s.update(ordenCompra);
+           
+           /*Registrar REcepcion de dichos Medicamentos*/
+           
     
     }
     
