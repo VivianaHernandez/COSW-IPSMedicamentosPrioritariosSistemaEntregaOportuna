@@ -27,7 +27,7 @@ public class SimpleMainProgram {
         
         Session session=sessionFactory.openSession();        
         Transaction tx=session.beginTransaction();
-        SimplePersistenceFacade.registrarSolicitudesMedicamento(session,79571373, 1922);
+        //SimplePersistenceFacade.registrarSolicitudesMedicamento(session,79571373, 1922);
         
         //SimplePersistenceFacade.operacionASerUtilizada(p1,p2);
         
