@@ -8,18 +8,18 @@
     <property name="hibernate.connection.username">cosw2</property>
     <property name="hibernate.connection.password">cosw2gr22</property>
     <mapping class="com.mycompany.priorityhealth.MedicamentosPorProveedor"/>
-    <mapping class="com.mycompany.priorityhealth.Pedidos"/>
-    <mapping class="com.mycompany.priorityhealth.Mensajeros"/>
+    <mapping class="com.mycompany.priorityhealth.Pedido"/>
+    <mapping class="com.mycompany.priorityhealth.Mensajero"/>
     <mapping class="com.mycompany.priorityhealth.DetallesPedido"/>
-    <mapping class="com.mycompany.priorityhealth.Epsafilidas"/>
-    <mapping class="com.mycompany.priorityhealth.Contratos"/>
-    <mapping class="com.mycompany.priorityhealth.Medicamentos"/>
-    <mapping class="com.mycompany.priorityhealth.Autorizaciones"/>
+    <mapping class="com.mycompany.priorityhealth.Epsafilida"/>
+    <mapping class="com.mycompany.priorityhealth.Contrato"/>
+    <mapping class="com.mycompany.priorityhealth.Medicamento"/>
+    <mapping class="com.mycompany.priorityhealth.Autorizacion"/>
     <mapping class="com.mycompany.priorityhealth.Inventario"/>
-    <mapping class="com.mycompany.priorityhealth.Pacientes"/>
-    <mapping class="com.mycompany.priorityhealth.Proveedores"/>
+    <mapping class="com.mycompany.priorityhealth.Paciente"/>
+    <mapping class="com.mycompany.priorityhealth.Proveedor"/>
     <mapping class="com.mycompany.priorityhealth.OrdenesCompra"/>
-    <mapping class="com.mycompany.priorityhealth.ContratosId"/>
-    <mapping class="com.mycompany.priorityhealth.Despachos"/>
+    <mapping class="com.mycompany.priorityhealth.ContratoId"/>
+    <mapping class="com.mycompany.priorityhealth.Despacho"/>
   </session-factory>
 </hibernate-configuration>
