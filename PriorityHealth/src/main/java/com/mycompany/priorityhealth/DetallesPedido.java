@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class DetallesPedido  implements java.io.Serializable {
 
 
-     private int idMedicamento;
+     private int idDetalle;
      private MedicamentosPorProveedor medicamentosPorProveedor;
      private Pedido pedido;
      private String cantidad;
@@ -29,13 +29,13 @@ public class DetallesPedido  implements java.io.Serializable {
     }
 
 	
-    public DetallesPedido(int idMedicamento, MedicamentosPorProveedor medicamentosPorProveedor, Pedido pedido) {
-        this.idMedicamento = idMedicamento;
+    public DetallesPedido(int idDetalle, MedicamentosPorProveedor medicamentosPorProveedor, Pedido pedido) {
+        this.idDetalle = idDetalle;
         this.medicamentosPorProveedor = medicamentosPorProveedor;
         this.pedido = pedido;
     }
-    public DetallesPedido(int idMedicamento, MedicamentosPorProveedor medicamentosPorProveedor, Pedido pedido, String cantidad) {
-       this.idMedicamento = idMedicamento;
+    public DetallesPedido(int idDetalle, MedicamentosPorProveedor medicamentosPorProveedor, Pedido pedido, String cantidad) {
+       this.idDetalle = idDetalle;
        this.medicamentosPorProveedor = medicamentosPorProveedor;
        this.pedido = pedido;
        this.cantidad = cantidad;
@@ -44,13 +44,13 @@ public class DetallesPedido  implements java.io.Serializable {
      @Id 
 
     
-    @Column(name="idMedicamentos", unique=true, nullable=false)
-    public int getIdMedicamento() {
-        return this.idMedicamento;
+    @Column(name="idDetalle", unique=true, nullable=false)
+    public int getIdDetalle() {
+        return this.idDetalle;
     }
     
-    public void setIdMedicamento(int idMedicamento) {
-        this.idMedicamento = idMedicamento;
+    public void setIdDetalle(int idDetalle) {
+        this.idDetalle = idDetalle;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
