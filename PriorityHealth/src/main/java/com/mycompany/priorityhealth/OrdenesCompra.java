@@ -77,11 +77,11 @@ public class OrdenesCompra  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="ordenesCompra")
-    public Set<DetallesOrdenComptaId> getMedicamentoses() {
+    public Set<DetallesOrdenComptaId> getDetallesOrdenComtaId() {
         return this.almDetallesCompra;
     }
     
-    public void setMedicamentoses(Set<DetallesOrdenComptaId> almDetallesCompra) {
+    public void setDetallesOrdenComtaId(Set<DetallesOrdenComptaId> almDetallesCompra) {
         this.almDetallesCompra = almDetallesCompra;
     }
 
