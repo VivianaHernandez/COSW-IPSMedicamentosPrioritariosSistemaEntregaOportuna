@@ -20,6 +20,9 @@ public class DetallesOrdenComptaId  implements java.io.Serializable {
      private int idDetallesOrdenComptaId;
      private Integer idMedicamento;
      private Integer idOrdenCompra;
+     private Integer cantidad;
+
+   
 
     public DetallesOrdenComptaId() {
     }
@@ -28,10 +31,11 @@ public class DetallesOrdenComptaId  implements java.io.Serializable {
     public DetallesOrdenComptaId(int idDetallesOrdenComptaId) {
         this.idDetallesOrdenComptaId = idDetallesOrdenComptaId;
     }
-    public DetallesOrdenComptaId(Integer idMedicamento, Integer idOrdenCompra) {
+    public DetallesOrdenComptaId(Integer idMedicamento, Integer idOrdenCompra,Integer cantidad) {
        this.idDetallesOrdenComptaId = idDetallesOrdenComptaId;
        this.idMedicamento = idMedicamento;
        this.idOrdenCompra = idOrdenCompra;
+       this.cantidad = cantidad;
     }
    
     @Id 
@@ -65,7 +69,13 @@ public class DetallesOrdenComptaId  implements java.io.Serializable {
         this.idOrdenCompra = idOrdenCompra;
     }
 
+     public Integer getCantidad() {
+        return cantidad;
+    }
 
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
 
 
 }
