@@ -23,7 +23,7 @@ public class DetallesPedido  implements java.io.Serializable {
      private int idDetalle;
      private MedicamentosPorProveedor medicamentosPorProveedor;
      private Pedido pedido;
-     private String cantidad;
+     private int cantidad;
 
     public DetallesPedido() {
     }
@@ -34,7 +34,7 @@ public class DetallesPedido  implements java.io.Serializable {
         this.medicamentosPorProveedor = medicamentosPorProveedor;
         this.pedido = pedido;
     }
-    public DetallesPedido(int idDetalle, MedicamentosPorProveedor medicamentosPorProveedor, Pedido pedido, String cantidad) {
+    public DetallesPedido(int idDetalle, MedicamentosPorProveedor medicamentosPorProveedor, Pedido pedido, int cantidad) {
        this.idDetalle = idDetalle;
        this.medicamentosPorProveedor = medicamentosPorProveedor;
        this.pedido = pedido;
@@ -75,11 +75,11 @@ public class DetallesPedido  implements java.io.Serializable {
 
     
     @Column(name="cantidad", length=45)
-    public String getCantidad() {
+    public int getCantidad() {
         return this.cantidad;
     }
     
-    public void setCantidad(String cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 

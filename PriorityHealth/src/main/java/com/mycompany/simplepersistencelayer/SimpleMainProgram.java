@@ -1,6 +1,12 @@
 
 package com.mycompany.simplepersistencelayer;
 
+import com.mycompany.priorityhealth.Despacho;
+import com.mycompany.priorityhealth.Mensajero;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -21,7 +27,8 @@ public class SimpleMainProgram {
         
         Session session=sessionFactory.openSession();        
         Transaction tx=session.beginTransaction();
-
+        SimplePersistenceFacade.registrarSolicitudesMedicamento(session,79571373, 1922);
+        
         //SimplePersistenceFacade.operacionASerUtilizada(p1,p2);
         
         tx.commit();
