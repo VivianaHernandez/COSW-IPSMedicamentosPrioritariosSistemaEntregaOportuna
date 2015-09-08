@@ -1,6 +1,6 @@
 package com.mycompany.simplepersistencelayer;
 
-import com.mycompany.priorityhealth.DetallesOrdenComptaId;
+import com.mycompany.priorityhealth.DetallesOrdenesCompra;
 import com.mycompany.priorityhealth.DetallesPedido;
 import com.mycompany.priorityhealth.Medicamento;
 import com.mycompany.priorityhealth.MedicamentosPorProveedor;
@@ -36,17 +36,17 @@ public class SimplePersistenceFacade {
        
            int idenMedicamento=identificadoresmedicamentos[0];
            int cantidad=cantidades[0];
-           Set<DetallesOrdenComptaId> almDetallesPedidos = new HashSet<DetallesOrdenComptaId>();
-           DetallesOrdenComptaId dpid;
+           Set<DetallesOrdenesCompra> almDetallesPedidos = new HashSet<DetallesOrdenesCompra>();
+           DetallesOrdenesCompra dpid;
            
            for(int i=0;i<identificadoresmedicamentos.length;i++)
            {
            idenMedicamento=identificadoresmedicamentos[i];
            cantidad=cantidades[i];
-           dpid=new DetallesOrdenComptaId(idenMedicamento,ordenCompra.getIdOrdenesCompra(),cantidad);
+           dpid=new DetallesOrdenesCompra(idenMedicamento,ordenCompra.getIdOrdenesCompra(),cantidad);
            s.save(dpid);
            } 
-           ordenCompra.setDetallesOrdenComtaId(almDetallesPedidos);
+           ordenCompra.setDetallesOrdenesCompra(almDetallesPedidos);
            s.update(ordenCompra);
            
            /*Registrar REcepcion de dichos Medicamentos*/
