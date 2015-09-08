@@ -2,6 +2,7 @@
 package com.mycompany.simplepersistencelayer;
 
 import com.mycompany.priorityhealth.Despacho;
+import com.mycompany.priorityhealth.Medicamento;
 import com.mycompany.priorityhealth.Mensajero;
 import java.util.Date;
 import java.util.HashSet;
@@ -30,7 +31,7 @@ public class SimpleMainProgram {
         Transaction tx=session.beginTransaction();
         //SimplePersistenceFacade.registrarSolicitudesMedicamento(session,79571373, 1922);
         
-       // registrarOrdenCompraPrueba(session);
+       //registrarOrdenCompraPrueba(session);
         
         tx.commit();
         session.close();
@@ -41,14 +42,14 @@ public class SimpleMainProgram {
     
     public static void registrarOrdenCompraPrueba(Session session)
     {
-      Query q1=session.createQuery("Select m from Medicamentos m");
-      List<Integer> lista1=q1.list();
-        
+      Query q1=session.createQuery("Select m from Medicamento m");
+      List<Medicamento> lista1=q1.list();
+      /*  
       int identificadoresmedicamentos[]= new int[2];
-      identificadoresmedicamentos[0]=lista1.get(0);
-      identificadoresmedicamentos[1]=lista1.get(1);
+      identificadoresmedicamentos[0]=lista1.get(0).getIdMedicamento();
+      identificadoresmedicamentos[1]=lista1.get(1).getIdMedicamento();
       
-      System.out.println("prueba..............."+identificadoresmedicamentos[1]);
+      //System.out.println("prueba..............."+identificadoresmedicamentos[1]);
       
       int cantidades[]=new int[2];
       cantidades[0]=3;
@@ -56,7 +57,7 @@ public class SimpleMainProgram {
       
       Date fecha=new Date(2015-05-15);
         
-     SimplePersistenceFacade.registrarNuevaOrdenDeCompra(session, identificadoresmedicamentos, cantidades, fecha);
-    
+     //SimplePersistenceFacade.registrarNuevaOrdenDeCompra(session, identificadoresmedicamentos, cantidades, fecha);
+    */
     }
 }   
