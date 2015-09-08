@@ -30,7 +30,7 @@ public class OrdenesCompra  implements java.io.Serializable {
      private int idOrdenesCompra;
      private Integer cantidad;
      private Date fecha;
-     private Set<DetallesOrdenComptaId> almDetallesCompra = new HashSet<DetallesOrdenComptaId>(0);
+     private Set<DetallesOrdenesCompra> detallesOrdenesCompra = new HashSet<DetallesOrdenesCompra>(0);
 
     public OrdenesCompra(Date fecha) {
         this.fecha=fecha;
@@ -40,11 +40,11 @@ public class OrdenesCompra  implements java.io.Serializable {
     public OrdenesCompra(int idOrdenesCompra) {
         this.idOrdenesCompra = idOrdenesCompra;
     }
-    public OrdenesCompra(int idOrdenesCompra, Integer cantidad, Date fecha,  Set<DetallesOrdenComptaId> almDetallesCompra) {
+    public OrdenesCompra(int idOrdenesCompra, Integer cantidad, Date fecha,  Set<DetallesOrdenesCompra> detallesOrdenesCompra) {
        this.idOrdenesCompra = idOrdenesCompra;
        this.cantidad = cantidad;
        this.fecha = fecha;
-       this.almDetallesCompra = almDetallesCompra;
+       this.detallesOrdenesCompra = detallesOrdenesCompra;
     }
    
     @Id 
@@ -78,14 +78,13 @@ public class OrdenesCompra  implements java.io.Serializable {
         this.fecha = fecha;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-	@JoinColumn(name="ORDENESCOMPRA_idOrdenesCompra")
-    public Set<DetallesOrdenComptaId> getDetallesOrdenComtaId() {
-        return this.almDetallesCompra;
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="detallesOrdenesCompra")
+    public Set<DetallesOrdenesCompra> getDetallesPedidos() {
+        return this.detallesOrdenesCompra;
     }
     
-    public void setDetallesOrdenComtaId(Set<DetallesOrdenComptaId> almDetallesCompra) {
-        this.almDetallesCompra = almDetallesCompra;
+    public void setDetallesPedidos(Set<DetallesOrdenesCompra> detallesOrdenesCompra) {
+        this.detallesOrdenesCompra = detallesOrdenesCompra;
     }
 
 
