@@ -11,7 +11,7 @@
     <mapping class="com.mycompany.priorityhealth.Pedido"/>
     <mapping class="com.mycompany.priorityhealth.Mensajero"/>
     <mapping class="com.mycompany.priorityhealth.DetallesPedido"/>
-    <mapping class="com.mycompany.priorityhealth.DetallesOrdenComptaId"/>
+    <mapping class="com.mycompany.priorityhealth.DetallesOrdenesCompra"/>
     <mapping class="com.mycompany.priorityhealth.Epsafilida"/>
     <mapping class="com.mycompany.priorityhealth.Contrato"/>
     <mapping class="com.mycompany.priorityhealth.Medicamento"/>
